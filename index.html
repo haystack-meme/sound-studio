@@ -289,9 +289,9 @@ function scheduleLayer(ctx, out, L, t0, ts, randomize) {
     g.gain.setValueAtTime(peak, t + Math.max(a, 0.001) + h);
     g.gain.exponentialRampToValueAtTime(0.0001, end);
   } else if (L.envCurve === 'eased') {
-    const ta = Math.max(a, 0.002), c = new Float32Array(48);
-    for (let i = 0; i < c.length; i++) c[i] = peak * (1 - Math.cos(Math.PI * i / (c.length - 1))) / 2;
-    g.gain.setValueCurveAtTime(c, t, ta);
+    const ta = Math.max(a, 0.002);
+    g.gain.setValueAtTime(0, t);
+    for (let i = 1; i <= 8; i++) g.gain.linearRampToValueAtTime(peak * (1 - Math.cos(Math.PI * i / 8)) / 2, t + ta * i / 8);
     g.gain.setValueAtTime(peak, t + ta + Math.max(h, 0.002));
     g.gain.linearRampToValueAtTime(0, end + Math.max(0, 0.002 - h));
   } else {
@@ -612,9 +612,9 @@ function playSound(ctx, destination, when = ctx.currentTime, randomize = true) {
       g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(peak, ta);
       g.gain.setValueAtTime(peak, ta + h); g.gain.exponentialRampToValueAtTime(0.0001, end);
     } else if (L.envCurve === 'eased') {
-      const ea = Math.max(a, 0.002), c = new Float32Array(48);
-      for (let i = 0; i < c.length; i++) c[i] = peak * (1 - Math.cos(Math.PI * i / (c.length - 1))) / 2;
-      g.gain.setValueCurveAtTime(c, t, ea);
+      const ea = Math.max(a, 0.002);
+      g.gain.setValueAtTime(0, t);
+      for (let i = 1; i <= 8; i++) g.gain.linearRampToValueAtTime(peak * (1 - Math.cos(Math.PI * i / 8)) / 2, t + ea * i / 8);
       g.gain.setValueAtTime(peak, t + ea + Math.max(h, 0.002)); g.gain.linearRampToValueAtTime(0, end + Math.max(0, 0.002 - h));
     } else {
       g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(peak, ta);
