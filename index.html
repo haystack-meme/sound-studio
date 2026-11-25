@@ -193,10 +193,10 @@ const defaultLayer = () => ({
 const defaultSound = () => ({ name: 'Untitled', volume: 0.7, timeScale: 1, seqGap: 280, reverb: 0, layers: [defaultLayer()] });
 
 const BUILTINS = [
-  { name: 'Solitaire — Slide (current)', volume: 0.7, timeScale: 1, seqGap: 280, reverb: 0, layers: [
-    { enabled: true, source: 'pink', gain: 0.5, delay: 0, freqStart: 808, freqEnd: 1020, rise: 1.6, sweepCurve: 'exponential',
-      bandpass: true, q: 0.8, highpass: 700, lowpass: 1600, lowpassStages: 3,
-      attack: 70, hold: 2, release: 45, envCurve: 'eased', pitchVar: 7, gainVar: 0 } ] },
+  { name: 'Solitaire — Soft tap (current)', volume: 0.7, timeScale: 1, seqGap: 280, reverb: 0, layers: [
+    { enabled: true, source: 'sine', gain: 0.5, delay: 0, freqStart: 600, freqEnd: 582, rise: 1, sweepCurve: 'linear',
+      bandpass: false, q: 1, highpass: 20, lowpass: 1500, lowpassStages: 1,
+      attack: 10, hold: 0, release: 70, envCurve: 'eased', pitchVar: 0, gainVar: 0 } ] },
   { name: 'Feather', volume: 0.7, timeScale: 1, seqGap: 280, reverb: 0, layers: [
     { enabled: true, source: 'pink', gain: 0.6, delay: 0, freqStart: 3500, freqEnd: 2200, rise: 1, sweepCurve: 'exponential',
       bandpass: true, q: 0.5, highpass: 1500, lowpass: 20000, lowpassStages: 1,
