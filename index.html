@@ -194,12 +194,12 @@ const defaultSound = () => ({ name: 'Untitled', volume: 0.7, timeScale: 1, seqGa
 
 const BUILTINS = [
   { name: 'Solitaire — Soft tap (current)', volume: 0.7, timeScale: 1, seqGap: 280, reverb: 0, layers: [
-    { enabled: true, source: 'white', gain: 0.5, delay: 0, freqStart: 1920, freqEnd: 1920, rise: 1, sweepCurve: 'exponential',
-      bandpass: true, q: 1, highpass: 20, lowpass: 20000, lowpassStages: 1,
-      attack: 2, hold: 0, release: 25, envCurve: 'exponential', pitchVar: 0, gainVar: 0 },
+    { enabled: true, source: 'white', gain: 0.5, delay: 0, freqStart: 1440, freqEnd: 1440, rise: 1, sweepCurve: 'exponential',
+      bandpass: true, q: 0.8, highpass: 20, lowpass: 2500, lowpassStages: 1,
+      attack: 4, hold: 0, release: 28, envCurve: 'exponential', pitchVar: 0, gainVar: 0 },
     { enabled: true, source: 'sine', gain: 0.25, delay: 0, freqStart: 600, freqEnd: 420, rise: 1, sweepCurve: 'exponential',
       bandpass: false, q: 1, highpass: 20, lowpass: 20000, lowpassStages: 1,
-      attack: 2, hold: 0, release: 20, envCurve: 'exponential', pitchVar: 0, gainVar: 0 } ] },
+      attack: 4, hold: 0, release: 18, envCurve: 'exponential', pitchVar: 0, gainVar: 0 } ] },
   { name: 'Feather', volume: 0.7, timeScale: 1, seqGap: 280, reverb: 0, layers: [
     { enabled: true, source: 'pink', gain: 0.6, delay: 0, freqStart: 3500, freqEnd: 2200, rise: 1, sweepCurve: 'exponential',
       bandpass: true, q: 0.5, highpass: 1500, lowpass: 20000, lowpassStages: 1,
